@@ -17,5 +17,11 @@ $ node lib/index.js list
 * 프로세스 삭제
 
 ```bash
-$ node lib/index.js delete [pid]
+$ node lib/index.js delete [index]
+```
+
+* 프로세스 로그
+
+```bash
+$ node lib/index.js log [index]
 ```
