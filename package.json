@@ -2,11 +2,34 @@
   "name": "mungrever",
   "version": "0.1.0",
   "description": "process management tool",
-  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pjt3591oo/mungrever"
+  },
+  "keywords": [
+    "cli",
+    "process management",
+    "sysadmin",
+    "tools"
+  ],
+  "bugs": {
+    "url": "https://github.com/pjt3591oo/mungrever/issues",
+    "email": "pjt3591oo@gmail.com"
+  },
+  "os": ["linux", "darwin"],
+  "author": {
+    "name" : "JeongTae Park",
+    "email" : "pjt3591oo@gmail.com",
+    "url" : "https://blog.naver.com/pjt3591oo"
+  },
+  "main": "./lib/index.js",
   "scripts": {
     "test": "echo \"hello world\""
   },
-  "author": "pjt3591oo",
+  "bin": {
+    "mungrever": "./bin/mungrever.js"
+  },
+  "preferGlobal": true,
   "license": "ISC",
   "dependencies": {
     "cli-color": "^2.0.2",
