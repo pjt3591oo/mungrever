@@ -20,7 +20,8 @@ Commands:
   start [options] <string>  create process by [*.js]
   log <number>              view log by process index
   delete <number>           process delete by process index
-  list
+  list                      managed process lise
+  monit <number>            show log monitor
   help [command]            display help for command
 ```
 
@@ -71,6 +72,12 @@ $ mungrever delete [index]
 $ mungrever log [index]
 ```
 
+* 프로세스 로그 모니터링
+
+```bash
+$ mungrever log [index]
+```
+
 ### dev
 
 * install
@@ -85,6 +92,7 @@ $ npm install -g .
 
 ```bash
 $ mungrever help
+
 Usage: mungrever [options] [command]
 
 CLI to process management
@@ -97,7 +105,8 @@ Commands:
   start [options] <string>  create process by [*.js]
   log <number>              view log by process index
   delete <number>           process delete by process index
-  list
+  list                      managed process lise
+  monit <number>            show log monitor
   help [command]            display help for command
 ```
 
@@ -147,4 +156,14 @@ $ node lib/index.js log [index]
 # or
 
 $ mungrever log [index]
+```
+
+* 프로세스 모니터링
+
+```bash
+$ node lib/index.js monit [index]
+
+# or
+
+$ mungrever monit [index]
 ```
