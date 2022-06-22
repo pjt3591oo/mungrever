@@ -75,10 +75,16 @@ $ mungrever start example/simple-server.js
 $ mungrever start example/simple-server.js -d
 ```
 
+디버그 모드는 모니터 프로세스로 동작중인 프로세스의 출력(표준출력/에러)을 터미널 세션으로 출력
+
 ```bash
 # 와치 모드
 $ mungrever start example/simple-server.js -d
 ```
+
+와치 모드는 실행중인 스크립트가 존재하는 디렉터리를 기준으로 변경이 감지되면 스크립트 재시작.
+
+와치 모드는 기본적으로 디버깅 모드로 동작한다.
 
 * 프로세스 목록조회
 
