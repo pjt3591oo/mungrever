@@ -79,7 +79,7 @@ $ mungrever start example/simple-server.js -d
 
 ```bash
 # 와치 모드
-$ mungrever start example/simple-server.js -d
+$ mungrever start example/simple-server.js -w
 ```
 
 와치 모드는 실행중인 스크립트가 존재하는 디렉터리를 기준으로 변경이 감지되면 스크립트 재시작.
