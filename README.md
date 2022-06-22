@@ -25,6 +25,22 @@ Commands:
   help [command]            display help for command
 ```
 
+```bash
+$ mungrever help start
+Usage: mungrever start [options] <string>
+
+create process by [*.js]
+
+Arguments:
+  string       *.js
+
+Options:
+  -w, --watch  Watch for file changes
+  -d, --debug  Forces forever to log debug output
+  -i <number>  cluster count
+  -h, --help   display help for command
+```
+
 * 프로세스 생성
 
 ```js
@@ -52,6 +68,16 @@ server.listen(3000, () => {
 
 ```bash
 $ mungrever start example/simple-server.js
+```
+
+```bash
+# 디버그 모드
+$ mungrever start example/simple-server.js -d
+```
+
+```bash
+# 와치 모드
+$ mungrever start example/simple-server.js -d
 ```
 
 * 프로세스 목록조회
@@ -110,6 +136,22 @@ Commands:
   help [command]            display help for command
 ```
 
+```bash
+$ mungrever help start
+Usage: mungrever start [options] <string>
+
+create process by [*.js]
+
+Arguments:
+  string       *.js
+
+Options:
+  -w, --watch  Watch for file changes
+  -d, --debug  Forces forever to log debug output
+  -i <number>  cluster count
+  -h, --help   display help for command
+```
+
 * 프로세스 생성
 
 ```bash
@@ -126,6 +168,24 @@ $ node lib/index.js start example/simple-server1.js
 # or
 
 $ mungrever start example/simple-server1.js
+```
+
+```bash
+# 디버그 모드
+$ node lib/index.js start example/simple-server1.js -d
+
+# or
+
+$ mungrever start example/simple-server1.js -d
+```
+
+```bash
+# 와치 모드
+$ node lib/index.js start example/simple-server1.js -w
+
+# or
+
+$ mungrever start example/simple-server1.js -w
 ```
 
 * 프로세스 목록조회
