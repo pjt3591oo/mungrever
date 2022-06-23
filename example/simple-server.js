@@ -2,7 +2,7 @@ const http = require('http');
 
 let count = 0;
 
-console.log(`I a'm server`)
+console.log(`I'm server`)
 
 const server = http.createServer(function (req, res) {
   console.log(`[example/simple-server.js] ${++count}`)
