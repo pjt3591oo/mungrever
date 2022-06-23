@@ -2,9 +2,15 @@
 
 mungrever는 forever를 모방한 프로세스 관리 도구입니다.
 
+### 설치
+
+* install
+
 ```bash
 $ npm install -g mungrever
 ```
+
+* commands
 
 ```bash
 $ mungrever help
@@ -25,6 +31,8 @@ Commands:
   help [command]            display help for command
 ```
 
+* start options 
+
 ```bash
 $ mungrever help start
 Usage: mungrever start [options] <string>
@@ -41,7 +49,9 @@ Options:
   -h, --help   display help for command
 ```
 
-* 프로세스 생성
+### 프로세스 생성
+
+* 샘플 서버코드
 
 ```js
 // example/simple-server.js
@@ -66,61 +76,84 @@ server.listen(3000, () => {
 })
 ```
 
+* 프로세스 생성
+
 ```bash
 $ mungrever start example/simple-server.js
 ```
 
+* 디버그 모드
+
+디버그 모드는 모니터 프로세스로 동작중인 프로세스의 출력(표준출력/에러)을 터미널 세션으로 출력
+
 ```bash
-# 디버그 모드
 $ mungrever start example/simple-server.js -d
 ```
 
-디버그 모드는 모니터 프로세스로 동작중인 프로세스의 출력(표준출력/에러)을 터미널 세션으로 출력
+* 와치모드
+
+와치 모드는 실행중인 스크립트가 존재하는 디렉터리를 기준으로 변경이 감지되면 스크립트 재시작.
+
+와치 모드는 기본적으로 디버깅 모드로 동작한다.
 
 ```bash
 # 와치 모드
 $ mungrever start example/simple-server.js -w
 ```
 
-와치 모드는 실행중인 스크립트가 존재하는 디렉터리를 기준으로 변경이 감지되면 스크립트 재시작.
+* 기타 커맨드 실행
 
-와치 모드는 기본적으로 디버깅 모드로 동작한다.
+```bash
+# rust 프로세스
+$ mungrever start ./ -c './example/test'
 
-* 프로세스 목록조회
+# golang 프로세스
+$ mungrever start ./ -c 'go run ./example/test.go'
+
+# python 프로세스
+$ mungrever start ./ -c 'python ./example/test.py'
+```
+
+### 프로세스 목록조회
 
 ```bash
 $ mungrever list
 ```
 
-* 프로세스 삭제
+### 프로세스 삭제
 
 ```bash
 $ mungrever delete [index]
 ```
 
-* 프로세스 로그
+### 프로세스 로그
 
 ```bash
 $ mungrever log [index]
 ```
 
-* 프로세스 로그 모니터링
+### 프로세스 로그 모니터링
 
 ```bash
-$ mungrever log [index]
+$ mungrever monit [index]
 ```
+
+---
 
 ### dev
 
-* install
+##### install
 
 ```bash
 $ git clone https://github.com/pjt3591oo/mungrever.git
 
 $ cd mungrever
 
-$ npm install -g .
+$ npm install -g . # 소스코드를 이용하여 global module 설치
+$ npm uninstall -g mungrever # 설치된 mungrever 제거
 ```
+
+##### commands
 
 ```bash
 $ mungrever help
@@ -142,6 +175,8 @@ Commands:
   help [command]            display help for command
 ```
 
+##### start options
+
 ```bash
 $ mungrever help start
 Usage: mungrever start [options] <string>
@@ -158,7 +193,7 @@ Options:
   -h, --help   display help for command
 ```
 
-* 프로세스 생성
+##### 프로세스 생성
 
 ```bash
 $ node lib/index.js start example/simple-server.js
@@ -176,8 +211,9 @@ $ node lib/index.js start example/simple-server1.js
 $ mungrever start example/simple-server1.js
 ```
 
+* 디버그 모드
+
 ```bash
-# 디버그 모드
 $ node lib/index.js start example/simple-server1.js -d
 
 # or
@@ -185,8 +221,9 @@ $ node lib/index.js start example/simple-server1.js -d
 $ mungrever start example/simple-server1.js -d
 ```
 
+* 와치 모드
+
 ```bash
-# 와치 모드
 $ node lib/index.js start example/simple-server1.js -w
 
 # or
@@ -194,7 +231,17 @@ $ node lib/index.js start example/simple-server1.js -w
 $ mungrever start example/simple-server1.js -w
 ```
 
-* 프로세스 목록조회
+* 기타 커맨드 실행
+
+```
+$ node lib/index.js start ./ -c './example/test'
+
+$ node lib/index.js start ./ -c 'go run ./example/test.go'
+
+$ node lib/index.js start ./ -c 'python ./example/test.py'
+```
+
+##### 프로세스 목록조회
 
 ```bash
 $ node lib/index.js list
@@ -204,7 +251,7 @@ $ node lib/index.js list
 $ mungrever list
 ```
 
-* 프로세스 삭제
+##### 프로세스 삭제
 
 ```bash
 $ node lib/index.js delete [index]
@@ -214,7 +261,7 @@ $ node lib/index.js delete [index]
 $ mungrever delete [index]
 ```
 
-* 프로세스 로그
+##### 프로세스 로그
 
 ```bash
 $ node lib/index.js log [index]
@@ -224,7 +271,7 @@ $ node lib/index.js log [index]
 $ mungrever log [index]
 ```
 
-* 프로세스 모니터링
+##### 프로세스 모니터링
 
 ```bash
 $ node lib/index.js monit [index]
