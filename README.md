@@ -2,6 +2,8 @@
 
 mungrever는 forever를 모방한 프로세스 관리 도구입니다.
 
+[npm](https://www.npmjs.com/package/mungrever)
+
 ### 설치
 
 * install
