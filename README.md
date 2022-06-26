@@ -42,13 +42,14 @@ Usage: mungrever start [options] <string>
 create process by [*.js]
 
 Arguments:
-  string       *.js
+  string                   *.js
 
 Options:
-  -w, --watch  Watch for file changes
-  -d, --debug  Forces forever to log debug output
-  -i <number>  cluster count
-  -h, --help   display help for command
+  -c, --command <string>   COMMAND to execute (defaults to node)
+  -i --instances <number>  launch [number] instances (for networked app)(load balanced)
+  -w, --watch              Watch for file changes
+  -d, --debug              Forces forever to log debug output
+  -h, --help               display help for command
 ```
 
 ### 프로세스 생성
@@ -200,13 +201,14 @@ Usage: mungrever start [options] <string>
 create process by [*.js]
 
 Arguments:
-  string       *.js
+  string                   *.js
 
 Options:
-  -w, --watch  Watch for file changes
-  -d, --debug  Forces forever to log debug output
-  -i <number>  cluster count
-  -h, --help   display help for command
+  -c, --command <string>   COMMAND to execute (defaults to node)
+  -i --instances <number>  launch [number] instances (for networked app)(load balanced)
+  -w, --watch              Watch for file changes
+  -d, --debug              Forces forever to log debug output
+  -h, --help               display help for command
 ```
 
 ##### 프로세스 생성
