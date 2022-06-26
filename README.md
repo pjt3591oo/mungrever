@@ -116,6 +116,14 @@ $ mungrever start ./ -c 'go run ./example/test.go'
 $ mungrever start ./ -c 'python ./example/test.py'
 ```
 
+* 클러스터 모드
+
+클러스터 모드로 생성된 프로세스는 exception 등으로 종료될 경우 다시 실행되며, 외부 signal로 인해 죽을경우 다시 생성하지 않으며 종료된 프로세스는 제거됩니다
+
+```bash
+$ mungrever start example/simple-server.js -i [인스턴스 수]
+```
+
 ### 프로세스 목록조회
 
 ```bash
@@ -124,17 +132,23 @@ $ mungrever list
 
 ### 프로세스 삭제
 
+클러스터 모드의 프로세스가 삭제될 경우 해당 인스턴스는 모두 삭제된다
+
 ```bash
 $ mungrever delete [index]
 ```
 
 ### 프로세스 로그
 
+클러스터 모드의 프로세스는 개별적인 PID를 할당받으므로, 개별적으로 로그가 관리된다
+
 ```bash
 $ mungrever log [index]
 ```
 
 ### 프로세스 로그 모니터링
+
+클러스터 모드의 프로세스는 개별적인 PID를 할당받으므로, 개별적으로 로그가 관리된다
 
 ```bash
 $ mungrever monit [index]
@@ -243,6 +257,12 @@ $ node lib/index.js start ./ -c 'go run ./example/test.go'
 $ node lib/index.js start ./ -c 'python ./example/test.py'
 ```
 
+* 클러스터 모드
+
+```bash
+$ node lib/index.js start example/simple-server.js -i [인스턴스 수]
+```
+
 ##### 프로세스 목록조회
 
 ```bash
@@ -282,3 +302,4 @@ $ node lib/index.js monit [index]
 
 $ mungrever monit [index]
 ```
+
